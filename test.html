@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>card</title>
+    <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .main{
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .left,.right {
+      width: 15%;
+      height: 100%;
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+    }
+
+    .left{
+      /* width: 15%; */
+      display: flex;
+      text-align: end;
+    }
+
+    .left ul {
+      width: 100%;
+      height: 100% ;
+      display: flex;
+      justify-content: center;
+    }
+    
+   
+    .center {
+      position: relative;
+      width: 65%;
+      height: 80%;
+      border: 2px solid white;
+      border-radius: 500px;
+      transition: all 0.7s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .center:hover {
+      width: 67%;
+      height: 85%;
+      /* background-color: red; */
+      
+    }
+ 
+    .center-rotate {
+      width: 95%;
+      height: 95%;
+transition: all 2.7s ease-in-out;
+      border-radius: 500px;
+      opacity: 0;
+      /* animation: rotate 10s infinite linear; */
+    }
+
+    .center:hover .center-rotate{
+      animation: rotate 2s infinite linear;
+      transition: all 2s ease;
+      opacity: 1;
+      /* background: linear-gradient(to right, #3FFF1B, green,pink,red,yellow); */
+      box-shadow: 50px 0px 50px red, -50px 0px 50px rgb(24, 179, 66), 0px 50px 50px rgb(55, 17, 121),0px -50px 50px rgb(133, 9, 51);
+    }
+
+    @keyframes rotate {
+      to{
+        transform: rotate(360deg);
+        opacity: 1;
+      }
+    }
+
+    .inner-center {
+      position: absolute;
+      width: 99%;
+      height: 98%;
+      background-color: rgb(0, 0, 0);
+      border-radius: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .inner-center a button {
+      position: absolute;
+      border: none;
+      padding: 20px 30px;
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+      border-radius: 50px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 99 !important;
+    }
+
+    .center video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 9 !important;
+      border-radius: 50%;
+    }
+    .product-horizontal {
+      position: relative;
+  min-width: 100%;
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  display: flex;
+  /* overflow-x: auto; Allow horizontal scrolling */
+  /* white-space: nowrap; Prevent line breaks and make children inline */
+  /* overflow-x: hidden; */
+  /* transform: translateX(-100%); */
+}
+
+.product-container {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+}
+
+.product {
+  width: 100%;
+  height: 100%;
+  background-color: pink;
+  display: flex; 
+  vertical-align: top; 
+}
+
+.product:nth-of-type(2) {
+  transform: translate(100%);
+
+}
+.product:nth-of-type(3) {
+  transform: translate(200%);
+
+}
+
+.product-content {
+  flex: 6;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+}
+
+.product-img {
+  flex: 4;
+  width: 100%;
+  height: 100%;
+  background-color: green;
+}
+
+.row {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  width: 100%;
+  height: 100vh;
+  border: 1px solid #ddd;
+}
+
+.nav {
+  /* position: absolute; */
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+}
+
+.nav:hover {
+  transform: translateX(50%);
+}
+
+.nav:hover .nav-items {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav-items {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+    
+  </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="item col-md-4 col-sm-12">home</div>
+      <div class="item col-md-4 col-sm-12">facebook</div>
+      <div class="item col-md-4 col-sm-12">location</div>
+    </div>
+    <div class="nav">
+      <div class="nav-items">hello</div>
+    </div>
+    <div class="product-horizontal">
+      <div class="product-container">
+        <div class="product">
+
+        </div>
+        <div class="product">
+
+        </div>
+        <div class="product">
+
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="left">
+        <ul>
+          <li><a href="#" style="margin-right: -18px;">Home</a></li>
+          <li><a href="#" style="margin-right: -2px;">About us</a></li>
+          <li><a href="#" style="margin-right: -2px;">Our Service</a></li>
+          <li><a href="#" style="margin-right: -18px;">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="center">
+        <video src="https://cdn.cuberto.com/cb/footer/1.mp4" autoplay loop
+          muted></video>
+        <div class="center-rotate"></div>
+        <div class="inner-center">
+          <a href="#">
+            <button>contact us</button>
+          </a>
+          <button></button>
+        </div>
+      </div>
+      <div class="right">
+        <ul>
+          <li><a href="#" style="margin-left: -37px;;">facebook</a></li>
+          <li><a href="#" style="margin-left: -10px;">Whatsapp</a></li>
+          <li><a href="#">Mail</a></li>
+          <li><a href="#">
+              <p style="margin-left: -35px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; North Half Floor, 2nd
+                Floor, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABC
+                Business
+                Building, &nbsp;&nbsp;&nbsp;&nbsp;Thamel
+                Kathmandu, Bagmati 44600 Nepal</p>
+            </a></li>
+        </ul>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+gsap.to('.product',{
+  transform:'translateX(0%)',
+  scrollTrigger: {
+    trigger: '.product-horizontal',
+    scroller: 'body',
+    markers:true,
+    scrub: 2,
+    pin:true,
+    start:'top 0%',
+    end: 'top -150%',
+  }
+})
+    </script>
+
+  </body>
+</html>
